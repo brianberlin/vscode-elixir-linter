@@ -120,7 +120,7 @@ export default class ElixirLintingProvider {
         }
 
         // use stdin for credo to prevent running on entire project
-        const childProcess = cp.spawn(ElixirLintingProvider.linterCommand, args, cmd.getOptions(vscode));
+        const childProcess = cp.spawn(ElixirLintingProvider.linterCommand, args, cmd.getOptions(settings));
         childProcess.stdin.write(textDocument.getText());
         childProcess.stdin.end();
 

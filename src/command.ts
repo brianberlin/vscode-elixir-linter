@@ -2,11 +2,11 @@ interface IOptions {
     cwd?: string;
 }
 
-export let getOptions = (vscode): IOptions => {
+export let getOptions = (settings): IOptions => {
   const options: IOptions = {};
 
-  if (vscode.workspace.rootPath) {
-      options.cwd = vscode.workspace.rootPath;
+  if (settings.projectPath) {
+      options.cwd = settings.projectPath;
   }
 
   return options;
